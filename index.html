@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prevención de Riesgos: Ruido Ocupacional (ISP Chile / PREXOR)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand" onclick="showView('menu-view')">
+      <span class="brand-badge">ISP / PREXOR</span>
+      <span class="brand-title">Prevención de Riesgos: Ruido Ocupacional en Chile</span>
+    </div>
+    <nav class="top-nav">
+      <button class="nav-btn" onclick="showView('menu-view')">Inicio</button>
+      <button class="nav-btn" onclick="showView('norma-view')">Resumen Norma (2 Págs.)</button>
+      <button class="nav-btn nav-btn-primary" onclick="startQuiz()">Jugar Cuestionario</button>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <!-- ==================== VISTA 1: MENÚ DE INICIO ==================== -->
+    <section id="menu-view" class="view active">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="pill">Normativa Chilena Vigente • D.S. N° 594 / PREXOR / ISP</span>
+          <h1>Desafío Interactivo de Prevención de Riesgos en Ruido Ocupacional</h1>
+          <p class="hero-lead">
+            Aprende y evalúa tus conocimientos sobre la normativa chilena actual del
+            <strong>Instituto de Salud Pública (ISP)</strong>, el <strong>Decreto Supremo N° 594</strong>
+            y el protocolo <strong>PREXOR</strong> del MINSAL.
+          </p>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Páginas de Estudio</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">15</span>
+              <span class="stat-label">Preguntas con Imagen Guía</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">5</span>
+              <span class="stat-label">Alternativas por Pregunta</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">Única / Múltiple</span>
+              <span class="stat-label">Modalidad de Selección</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-secondary btn-lg" onclick="showView('norma-view')">
+              📖 Leer Resumen de la Norma (2 Páginas)
+            </button>
+            <button class="btn btn-primary btn-lg" onclick="startQuiz()">
+              🎮 Iniciar Cuestionario (15 Preguntas)
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-illustration">
+          <svg viewBox="0 0 360 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración protección auditiva">
+            <defs>
+              <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1e293b"/>
+                <stop offset="100%" stop-color="#0f172a"/>
+              </linearGradient>
+              <linearGradient id="accentGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="280" rx="20" fill="url(#bgGrad)" stroke="#334155" stroke-width="2"/>
+            <!-- Ondas acústicas -->
+            <path d="M55 140 Q70 95 85 140 T115 140 T145 140" fill="none" stroke="#38bdf8" stroke-width="3" opacity="0.7"/>
+            <path d="M215 140 Q230 85 245 140 T275 140 T305 140" fill="none" stroke="#f59e0b" stroke-width="3" opacity="0.7"/>
+            <!-- Casco + Protector auditivo -->
+            <path d="M130 130 A50 50 0 0 1 230 130 Z" fill="#facc15" stroke="#eab308" stroke-width="3"/>
+            <rect x="122" y="126" width="116" height="10" rx="5" fill="#eab308"/>
+            <circle cx="180" cy="162" r="34" fill="#cbd5e1"/>
+            <!-- Orejeras EPA -->
+            <path d="M135 130 C135 90, 225 90, 225 130" fill="none" stroke="#64748b" stroke-width="6"/>
+            <rect x="124" y="140" width="18" height="38" rx="9" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+            <rect x="218" y="140" width="18" height="38" rx="9" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+            <!-- Escudo ISP / Prevención -->
+            <rect x="95" y="218" width="170" height="34" rx="8" fill="#0f172a" stroke="url(#accentGrad)" stroke-width="2"/>
+            <text x="180" y="240" text-anchor="middle" fill="#f8fafc" font-family="Inter, sans-serif" font-size="13" font-weight="700">D.S. 594 • PREXOR • ISP</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="instructions-grid">
+        <div class="info-box">
+          <h3>1. Estudia el Resumen (2 Páginas)</h3>
+          <p>Todas las 15 preguntas del juego provienen directamente de las 2 páginas del resumen oficial sobre el D.S. N° 594, PREXOR y las guías del ISP Chile.</p>
+        </div>
+        <div class="info-box">
+          <h3>2. Observa la Imagen Guía</h3>
+          <p>Cada pregunta incluye una ilustración técnica que orienta visualmente el concepto evaluado sin regalar la respuesta.</p>
+        </div>
+        <div class="info-box">
+          <h3>3. Retroalimentación Visual</h3>
+          <p>Al responder o finalizar, las respuestas correctas se enmarcan en <strong>borde verde</strong> y los errores en <strong>borde rojo</strong> con su explicación normativa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA 2: RESUMEN DE LA NORMA (2 PÁGINAS) ==================== -->
+    <section id="norma-view" class="view">
+      <div class="norma-header">
+        <div>
+          <span class="pill">Material Oficial de Estudio</span>
+          <h2>Resumen Normativa Chilena de Ruido Ocupacional (ISP / MINSAL)</h2>
+          <p>Lee atentamente ambas páginas: las 15 preguntas del cuestionario se extraen íntegramente de este documento.</p>
+        </div>
+        <div class="page-switcher">
+          <button id="btn-page-1" class="page-tab active" onclick="switchNormaPage(1)">📄 Página 1: Marco Legal, Límites y Medición</button>
+          <button id="btn-page-2" class="page-tab" onclick="switchNormaPage(2)">📄 Página 2: PREXOR, Control, EPA y Vigilancia</button>
+        </div>
+      </div>
+
+      <!-- PÁGINA 1 DEL RESUMEN -->
+      <article id="norma-page-1" class="norma-page active">
+        <div class="page-banner">
+          <span>PÁGINA 1 DE 2</span>
+          <span>MARCO NORMATIVO, CONCEPTOS ACÚSTICOS Y LÍMITES PERMISIBLES (D.S. N° 594 E ISP)</span>
+        </div>
+
+        <div class="norma-grid">
+          <div class="norma-block">
+            <h3>1. Marco Regulador e Instituciones en Chile</h3>
+            <p>
+              En Chile, la prevención de la pérdida auditiva por exposición laboral a ruido está regulada por tres pilares técnicos y legales:
+            </p>
+            <ul>
+              <li><strong>Decreto Supremo N° 594 (MINSAL):</strong> Reglamento sobre Condiciones Sanitarias y Ambientales Básicas en los Lugares de Trabajo. Establece los límites permisibles de exposición a agentes físicos, incluido el ruido (Artículos 70 al 82).</li>
+              <li><strong>Instituto de Salud Pública de Chile (ISP):</strong> Es el <strong>Laboratorio Nacional y de Referencia</strong> en Salud Ocupacional. Emite los instructivos oficiales de medición de ruido, las guías de selección y control de Protectores Auditivos (EPA) y administra el <em>Registro de Fabricantes e Importadores (RFI)</em>.</li>
+              <li><strong>Protocolo PREXOR (MINSAL):</strong> Protocolo de Exposición Ocupacional a Ruido, de carácter obligatorio para todas las empresas con trabajadores expuestos y para los Organismos Administradores de la Ley N° 16.744 (Mutualidades e ISL).</li>
+            </ul>
+          </div>
+
+          <div class="norma-block">
+            <h3>2. Clasificación del Ruido según D.S. N° 594</h3>
+            <p>El D.S. N° 594 clasifica el ruido laboral en tres tipos según su variación temporal:</p>
+            <ul>
+              <li><strong>Ruido Estable:</strong> Presenta fluctuaciones del nivel de presión sonora instantáneo <strong>inferiores o iguales a 5 dB(A) lento</strong> durante un período de observación de 1 minuto.</li>
+              <li><strong>Ruido Fluctuante:</strong> Presenta fluctuaciones del nivel de presión sonora instantáneo <strong>superiores a 5 dB(A) lento</strong> durante un período de observación de 1 minuto.</li>
+              <li><strong>Ruido Impulsivo:</strong> Aquel que presenta impulsos de energía acústica de duración <strong>inferior a 1 segundo</strong> a intervalos superiores a 1 segundo (por ejemplo, martillazos, prensas o disparos).</li>
+            </ul>
+          </div>
+
+          <div class="norma-block">
+            <h3>3. Instrumentación y Ponderaciones Acústicas (Instructivo ISP)</h3>
+            <p>
+              De acuerdo con el Instructivo para la Aplicación del D.S. N° 594 del ISP, la cuantificación del ruido en el trabajo utiliza dos instrumentos principales:
+            </p>
+            <ul>
+              <li><strong>Sonómetro Integrador-Promediador:</strong> Se emplea cuando el trabajador permanece en puestos fijos o con tareas bien definidas y estacionarias.</li>
+              <li><strong>Dosímetro Personal de Ruido:</strong> Se ubica en el trabajador (micrófono sobre el hombro, cerca del oído más expuesto) cuando realiza tareas móviles, variables o se desplaza por distintas áreas.</li>
+              <li><strong>Curvas de Ponderación:</strong> El <strong>ruido estable o fluctuante</strong> se mide en <strong>dB(A) Lento (Slow)</strong> a través del Nivel de Presión Sonora Continuo Equivalente (<strong>NPSeq</strong>), porque la curva A simula la respuesta del oído humano. En cambio, el <strong>ruido impulsivo</strong> se mide en <strong>dB(C) Peak</strong>, ya que evalúa picos instantáneos de alta energía sin atenuar bajas frecuencias.</li>
+              <li><strong>Calibración en Terreno:</strong> Es obligatorio verificar el instrumento con un <strong>calibrador acústico</strong> inmediatamente <strong>antes y después</strong> de cada jornada de medición. Si existe una desviación mayor a <strong>±1,0 dB</strong> entre la verificación inicial y final, la medición debe <strong>descartarse (invalidarse)</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="norma-block">
+            <h3>4. Límites Máximos Permisibles y Tasa de Intercambio (q = 3 dB)</h3>
+            <p>
+              El D.S. N° 594 adopta el principio de igual energía con una <strong>tasa de intercambio (o factor de duplicación) de 3 dB</strong>: cada aumento de <strong>3 dB(A)</strong> duplica la energía acústica y exige <strong>reducir a la mitad el tiempo máximo de exposición</strong> permitido:
+            </p>
+            <table class="norma-table">
+              <thead>
+                <tr>
+                  <th>Nivel NPSeq [dB(A) Lento]</th>
+                  <th>Tiempo Máximo Permitido por Jornada</th>
+                  <th>Relación Energética</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>85 dB(A)</strong></td>
+                  <td><strong>8 horas</strong></td>
+                  <td>100% Dosis Diaria (LMP para 8 h)</td>
+                </tr>
+                <tr>
+                  <td><strong>88 dB(A)</strong> (+3 dB)</td>
+                  <td><strong>4 horas</strong></td>
+                  <td>Mitad del tiempo (Doble energía)</td>
+                </tr>
+                <tr>
+                  <td><strong>91 dB(A)</strong> (+6 dB)</td>
+                  <td><strong>2 horas</strong></td>
+                  <td>Cuarta parte del tiempo</td>
+                </tr>
+                <tr>
+                  <td><strong>94 dB(A)</strong> (+9 dB)</td>
+                  <td><strong>1 hora</strong></td>
+                  <td>Octava parte del tiempo</td>
+                </tr>
+                <tr>
+                  <td><strong>115 dB(A)</strong></td>
+                  <td><strong>Techo Absoluto (0 s sin protección)</strong></td>
+                  <td>Prohibido para ruido estable/fluctuante sin EPA</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="norma-highlight">
+              ⚠️ <strong>Techo para Ruido Impulsivo:</strong> En ningún caso se permite la exposición sin protección auditiva a ruidos impulsivos que sobrepasen los <strong>140 dB(C) Peak</strong> (y a 135 dB(C) Peak comienza el Criterio de Acción de PREXOR).
+            </p>
+          </div>
+        </div>
+
+        <div class="page-footer-nav">
+          <span>Página 1 de 2</span>
+          <button class="btn btn-primary" onclick="switchNormaPage(2)">Ir a Página 2: PREXOR, Control y EPA →</button>
+        </div>
+      </article>
+
+      <!-- PÁGINA 2 DEL RESUMEN -->
+      <article id="norma-page-2" class="norma-page">
+        <div class="page-banner">
+          <span>PÁGINA 2 DE 2</span>
+          <span>PROTOCOLO PREXOR, JERARQUÍA DE CONTROL, PLAZOS Y ELEMENTOS DE PROTECCIÓN AUDITIVA (ISP)</span>
+        </div>
+
+        <div class="norma-grid">
+          <div class="norma-block">
+            <h3>5. Criterios de Acción del Protocolo PREXOR</h3>
+            <p>
+              El <strong>Criterio de Acción (CA)</strong> es el nivel preventivo que obliga al empleador a implementar medidas de control ingenieril/administrativo y a ingresar al trabajador al programa de vigilancia, <strong>antes</strong> de alcanzar el límite legal del D.S. N° 594. Se activa cuando ocurre <strong>cualquiera</strong> de estas tres condiciones:
+            </p>
+            <ul>
+              <li><strong>Dosis de Ruido Diaria (DRD) igual o superior a 0,5 (50%)</strong> de la dosis máxima permisible.</li>
+              <li><strong>NPSeq igual o superior a 82 dB(A)</strong> para una jornada efectiva de 8 horas diarias (dado que con tasa de cambio de 3 dB, 82 dB(A) equivale exactamente al 50% de la energía de 85 dB(A)).</li>
+              <li><strong>Nivel de Ruido Impulsivo igual o superior a 135 dB(C) Peak</strong>.</li>
+            </ul>
+            <p>
+              Además, el empleador debe mantener actualizado un <strong>Sistema de Gestión para la Vigilancia de Trabajadores Expuestos a Ruido</strong> y elaborar un <strong>Mapa de Riesgo</strong> (cualitativo y cuantitativo) revisado periódicamente.
+            </p>
+          </div>
+
+          <div class="norma-block">
+            <h3>6. Jerarquía de Control y Plazos Obligatorios</h3>
+            <p>
+              Según PREXOR y el ISP, el control del ruido debe seguir estrictamente la <strong>Jerarquía de Control de Riesgos</strong>:
+            </p>
+            <ol>
+              <li><strong>Control de Ingeniería en la Fuente (Prioridad N° 1):</strong> Mantenimiento preventivo, sustitución de piezas desgastadas, anclaje antivibratorio o cambio por maquinaria silenciosa.</li>
+              <li><strong>Control de Ingeniería en el Medio de Propagación (Prioridad N° 2):</strong> Encerramiento acústico (cabinas insonorizadas), pantallas o barreras acústicas y revestimientos fonoabsorbentes.</li>
+              <li><strong>Controles Administrativos (Prioridad N° 3):</strong> Rotación de puestos para disminuir el tiempo de exposición, señalización de zonas ruidosas y programación de tareas.</li>
+              <li><strong>Elementos de Protección Auditiva - EPA (Última Barrera):</strong> Uso complementario y temporal mientras se implementan controles técnicos o cuando estos no son suficientes.</li>
+            </ol>
+            <p class="norma-highlight">
+              ⏱️ <strong>Plazos de Implementación (PREXOR):</strong><br>
+              • Si la exposición está <strong>entre el Criterio de Acción (≥ 82 dB(A) o Dosis ≥ 50%) y menor a 95 dB(A)</strong> (o Dosis &lt; 1000%): plazo máximo de <strong>1 año (12 meses)</strong> para implementar medidas de control.<br>
+              • Si la exposición es <strong>igual o superior a 95 dB(A)</strong> (o Dosis ≥ 1000%, o ≥ 135 dB(C) Peak): plazo máximo de <strong>6 meses</strong>.
+            </p>
+          </div>
+
+          <div class="norma-block">
+            <h3>7. Selección y Uso de Protección Auditiva (Guía ISP)</h3>
+            <p>
+              La <em>Guía para la Selección y Control de Protectores Auditivos</em> del ISP establece:
+            </p>
+            <ul>
+              <li><strong>Certificación y RFI:</strong> Todo EPA comercializado y usado en Chile debe estar certificado o inscrito en el <strong>Registro de Fabricantes e Importadores (RFI) del ISP</strong> (D.S. N° 18).</li>
+              <li><strong>Nivel de Presión Sonora Efectivo Ponderado (NPSeq' efectivo):</strong> El EPA debe reducir el ruido en el oído del trabajador por debajo de los 80 dB(A), procurando un rango óptimo entre <strong>70 dB(A) y 79 dB(A)</strong>.</li>
+              <li><strong>Riesgo de Sobreprotección (&lt; 70 dB(A)):</strong> Si el nivel efectivo en el oído baja de <strong>70 dB(A)</strong>, se produce <strong>sobreprotección</strong>: el trabajador siente aislamiento acústico, no escucha alarmas de emergencia ni voces de advertencia, y tiende a retirarse el protector.</li>
+              <li><strong>Efecto del No Uso Continuo:</strong> Debido a la escala logarítmica de los decibeles, <strong>quitarse el protector auditivo apenas 15 a 30 minutos</strong> en una jornada de 8 horas con ruido de 95-100 dB(A) reduce drásticamente la atenuación real efectiva (pudiendo perderse más del 50% de la protección teórica).</li>
+              <li><strong>Métodos Reconocidos por el ISP para Calcular Atenuación:</strong> Método de <strong>Bandas de Octava</strong> (el más exacto), Método <strong>HML</strong> (Frecuencias Altas, Medias y Bajas) y Método <strong>SNR</strong> (Single Number Rating).</li>
+            </ul>
+          </div>
+
+          <div class="norma-block">
+            <h3>8. Daño Auditivo (HSNL) y Vigilancia de la Salud</h3>
+            <ul>
+              <li><strong>Hipoacusia Sensorioneural Laboral (HSNL):</strong> Es una pérdida auditiva <strong>irreversible, neurosensorial y generalmente bilateral y simétrica</strong> por daño en las células ciliadas del órgano de Corti en la cóclea. Típicamente inicia con una caída (escotoma acústico) en las frecuencias agudas de <strong>3.000, 4.000 y 6.000 Hz</strong> antes de afectar las frecuencias conversacionales.</li>
+              <li><strong>Reposo Auditivo Previo:</strong> Para que una <strong>audiometría de vigilancia o base</strong> sea válida según el ISP, el trabajador debe cumplir un <strong>reposo auditivo mínimo de 12 horas</strong> sin exposición a ruido laboral ni extralaboral intenso (evitando confundir un Cambio de Umbral Temporal - TTS con un daño permanente - PTS).</li>
+              <li><strong>Periodicidad de Audiometrías según Nivel de Seguimiento (PREXOR):</strong>
+                <ul>
+                  <li><strong>Nivel de Seguimiento I</strong> (82 ≤ NPSeq ≤ 85 dB(A) o 50% ≤ DRD ≤ 100%): cada <strong>3 años</strong>.</li>
+                  <li><strong>Nivel de Seguimiento II</strong> (85 &lt; NPSeq ≤ 95 dB(A) o 100% &lt; DRD ≤ 1000%): cada <strong>2 años</strong>.</li>
+                  <li><strong>Nivel de Seguimiento III</strong> (NPSeq &gt; 95 dB(A) o DRD &gt; 1000% o ≥ 135 dB(C) Peak): cada <strong>1 año</strong>.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="page-footer-nav">
+          <button class="btn btn-secondary" onclick="switchNormaPage(1)">← Volver a Página 1</button>
+          <button class="btn btn-primary btn-lg" onclick="startQuiz()">🎮 ¡Listo! Ir al Cuestionario de 15 Preguntas</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================== VISTA 3: CUESTIONARIO (15 PREGUNTAS) ==================== -->
+    <section id="quiz-view" class="view">
+      <div class="quiz-topbar">
+        <div class="quiz-progress-info">
+          <span id="question-counter" class="badge-counter">Pregunta 1 de 15</span>
+          <span id="question-type-badge" class="badge-type">Selección Única</span>
+        </div>
+        <div class="progress-bar-wrap">
+          <div id="progress-bar-fill" class="progress-bar-fill" style="width: 6.66%"></div>
+        </div>
+        <div class="quiz-score-live">
+          Puntaje actual: <strong id="live-score">0</strong> / 15
+        </div>
+      </div>
+
+      <div id="question-card" class="question-card">
+        <div class="question-visual">
+          <div id="question-svg-container" class="svg-wrapper"></div>
+          <p id="question-image-caption" class="img-caption"></p>
+        </div>
+
+        <div class="question-body">
+          <h2 id="question-title" class="question-title"></h2>
+          <p id="question-instruction" class="question-instruction"></p>
+
+          <div id="options-container" class="options-list"></div>
+
+          <!-- Retroalimentación inmediata -->
+          <div id="feedback-box" class="feedback-box hidden"></div>
+
+          <div class="question-actions">
+            <button id="btn-verify" class="btn btn-primary btn-lg" onclick="verifyCurrentAnswer()">
+              ✔️ Comprobar Respuesta
+            </button>
+            <button id="btn-next" class="btn btn-secondary btn-lg hidden" onclick="nextQuestion()">
+              Siguiente Pregunta →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA 4: RESULTADOS FINALES Y REVISIÓN ==================== -->
+    <section id="result-view" class="view">
+      <div class="result-summary-card">
+        <span class="pill">Evaluación Completada • Normativa ISP / PREXOR</span>
+        <h2>Resultado Final del Cuestionario</h2>
+        <div class="score-circle">
+          <span id="final-score-num">0</span>
+          <small>de 15 puntos</small>
+        </div>
+        <p id="final-percentage" class="final-percentage"></p>
+        <p id="final-message" class="final-message"></p>
+
+        <div class="result-actions">
+          <button class="btn btn-secondary" onclick="startQuiz()">🔄 Reintentar Juego</button>
+          <button class="btn btn-secondary" onclick="showView('norma-view')">📖 Ver Resumen de 2 Páginas</button>
+          <button class="btn btn-danger btn-lg" onclick="finishAndCloseApp()">
+            🛑 Terminar y Cerrar Pestaña (Puntaje Final)
+          </button>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h3>Revisión Detallada de las 15 Preguntas</h3>
+        <p class="review-subtitle">
+          Las preguntas acertadas se muestran con <strong>borde verde</strong> y las incorrectas con <strong>borde rojo</strong>, destacando en verde la(s) respuesta(s) correcta(s) y su fundamento normativo del ISP / D.S. N° 594.
+        </p>
+        <div id="review-list" class="review-list"></div>
+      </div>
+    </section>
+
+    <!-- ==================== VISTA 5: PANTALLA DE CIERRE FINAL ==================== -->
+    <section id="closed-view" class="view">
+      <div class="closed-card">
+        <div class="closed-icon">🏆</div>
+        <h2>¡Sesión Finalizada con Éxito!</h2>
+        <p class="closed-score-box">
+          Puntaje Total Obtenido: <strong id="closed-score-text">0 / 15</strong>
+        </p>
+        <p class="closed-note">
+          Si tu navegador bloqueó el cierre automático de la pestaña por políticas de seguridad (ocurre cuando la pestaña no fue abierta mediante un script externo), ya puedes cerrar esta pestaña manualmente con total seguridad o volver al inicio.
+        </p>
+        <button class="btn btn-secondary" onclick="showView('menu-view')">Volver al Menú de Inicio</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Juego Educativo de Prevención de Riesgos • Basado en D.S. N° 594, Protocolo PREXOR (MINSAL) y Guías Técnicas del Instituto de Salud Pública de Chile (ISP).</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
